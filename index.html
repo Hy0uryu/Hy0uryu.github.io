@@ -251,63 +251,6 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <script>
-    function toggleDescription(element) {
-                // Prevent default link behavior
-                event.preventDefault();
-
-                // Find the description div
-                const description = element.closest('.project-item').querySelector('.project-description');
-                const toggleIcon = element.querySelector('.toggle-icon');
-
-                // Toggle visibility
-                if (description.style.display === 'none') {
-                    description.style.display = 'block';
-                    toggleIcon.textContent = '▲';
-                } else {
-                    description.style.display = 'none';
-                    toggleIcon.textContent = '▼';
-                }
-            }
-
-            // On page load, set all project descriptions to be visible by default
-            document.addEventListener('DOMContentLoaded', function() {
-                const projectDescriptions = document.querySelectorAll('.project-description');
-                const toggleIcons = document.querySelectorAll('.toggle-icon');
-                const platformImages = document.querySelectorAll('.platform-image');
-                const modal = document.getElementById('imageModal');
-                const modalImage = document.getElementById('modalImage');
-                const closeModal = document.querySelector('.close-modal');
-
-                projectDescriptions.forEach(description => {
-                    description.style.display = 'block';
-                });
-
-                toggleIcons.forEach(icon => {
-                    icon.textContent = '▲';
-                });
-
-                // Image Modal Logic
-                platformImages.forEach(platform => {
-                    platform.addEventListener('click', function() {
-                        const imageName = this.getAttribute('data-image');
-                        modalImage.src = imageName;
-                        modal.style.display = 'flex';
-                    });
-                });
-
-                closeModal.onclick = function() {
-                    modal.style.display = 'none';
-                }
-
-                window.onclick = function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                    }
-                }
-            });
-    </script>
-
 <footer class="simple-footer" style="text-align: center; margin-top: 20px;">
     <p> Thanks for the website template offered by <a href="https://github.com/yun-long/yun-long.github.io">Yulong Song</a>. </p>
 </footer>
