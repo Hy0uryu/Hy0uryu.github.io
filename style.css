@@ -180,6 +180,7 @@ hr {
     align-items: flex-start;
     gap: 30px;
     margin-bottom: 20px; 
+}
   
 .publication-video {
     flex: 0 0 40%; 
